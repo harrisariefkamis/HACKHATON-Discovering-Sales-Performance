@@ -1,4 +1,4 @@
-# 📊 End-to-End Data Analytics Portfolio: Sales Performance Root Cause Analysis & Anomaly Detection
+# End-to-End Data Analytics Portfolio: Sales Performance Root Cause Analysis & Anomaly Detection
 [![MySQL Version](https://img.shields.io/badge/MySQL-8.0-blue.svg)](https://www.mysql.com/)
 [![MySQL Workbench](https://img.shields.io/badge/MySQL%20Workbench-8.0-blue.svg)](https://www.mysql.com/products/workbench/)
 [![Database Tool](https://img.shields.io/badge/DBeaver-Latest-orange.svg)](https://dbeaver.io/)
@@ -11,7 +11,7 @@
 
 Lihat Dashboard:https://sql-anomaly-dashboard-portfolio-142260617876.asia-southeast1.run.app
 
-## 📌 Project Overview
+## Project Overview
 Proyek ini berfokus pada **Root Cause Analysis (RCA)** untuk mengidentifikasi penurunan performa penjualan serta mendeteksi **anomali transaksi (outlier)** pada struktur organisasi multi-level yang kompleks.Menggunakan dataset transaksi riil, proyek ini menyelesaikan tantangan teknis berupa data hierarki yang dinamis (kedalaman bervariasi hingga 6 level) menggunakan engine database warisan (**MySQL 5.7 / 8.0** via **DBeaver**) tanpa fitur rekursi standar (*Common Table Expressions*), sekaligus menerapkan pemodelan statistik tingkat lanjut langsung di dalam kueri database.
 
 ---
@@ -19,7 +19,7 @@ Proyek ini berfokus pada **Root Cause Analysis (RCA)** untuk mengidentifikasi pe
   <img src="https://github.com/harrisariefkamis/Discovering-Sales-Performance/blob/fb7c3da4471904e88dc472f65e0cb7fbf5bbadd6/purchase_order_ERD-DIAGRAM.png" alt="ERD-Diagram" width="50%">
 </p>
 
-## 💼 1. Business Problem & Understanding
+## 1. Business Problem & Understanding
 
 ### Context & Challenge
 Perusahaan mengalami fluktuasi pendapatan yang tidak biasa pada beberapa lini manajerial. Manajemen membutuhkan visualisasi performa yang akurat per **Sales Manager Level 2** (pemimpin regional yang berada tepat di bawah `ROOT`). Namun, tim analis menghadapi dua kendala besar:
@@ -33,7 +33,7 @@ Perusahaan mengalami fluktuasi pendapatan yang tidak biasa pada beberapa lini ma
 
 ---
 
-## 🛠️ 2. Technical Solution & Database Architecture
+## 2. Technical Solution & Database Architecture
 
 Karena batasan lingkungan produksi (*environment constraint*) yang mensyaratkan kompatibilitas penuh dengan versi MySQL lama yang tidak mendukung fungsi rekursif (CTE), solusi ini dirancang menggunakan teknik **Hierarchical Flattening via Layered LEFT JOINs**.
 
@@ -47,7 +47,7 @@ Karena batasan lingkungan produksi (*environment constraint*) yang mensyaratkan 
 
 ---
 
-## 💻 3. SQL Production Code (`jawaban_final_SQL_2026.sql`)
+## 3. SQL Production Code (`jawaban_final_SQL_2026.sql`)
 
 Berikut adalah skrip SQL optimal yang mengombinasikan teknik *Flattening Hierarchy*, *Statistical Subqueries*, dan *Dual-Priority Custom Sorting* untuk memastikan output bersih sebanyak tepat **24 baris anomali**:
 
