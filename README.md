@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-informational.svg)]()
 
 <p align="left">
-  <img src="SQL WORKFLOW.png"alt="SQL Anomaly Analisis" width="425%">
+  <img src="SQL WORKFLOW.png"alt="SQL Anomaly Analisis" width="400%">
 </p>
 
 Lihat Dashboard:https://sql-anomaly-dashboard-portfolio-142260617876.asia-southeast1.run.app
